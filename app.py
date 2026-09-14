@@ -372,7 +372,7 @@ def load_from_google_drive(url):
 
                     if path.suffix.lower() in [".pdf", ".docx", ".txt", ".md"]:
                         downloaded_files[path.name] = path.read_bytes()
-        else:
+    else:
             output_path = os.path.join(temp_directory, "drive_file")
 
 
