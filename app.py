@@ -375,8 +375,6 @@ def load_from_google_drive(url):
         else:
             output_path = os.path.join(temp_directory, "drive_file")
 
-           else:
-    output_path = os.path.join(temp_directory, "drive_file")
 
     downloaded_path = gdown.download(
         url,
