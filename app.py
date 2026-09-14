@@ -378,8 +378,7 @@ def load_from_google_drive(url):
             downloaded_path = gdown.download(
                 url=url,
                 output=output_path,
-                quiet=True,
-                fuzzy=True
+                quiet=True
             )
 
             if downloaded_path:
