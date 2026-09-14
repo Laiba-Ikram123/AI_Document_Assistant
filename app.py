@@ -375,18 +375,21 @@ def load_from_google_drive(url):
         else:
             output_path = os.path.join(temp_directory, "drive_file")
 
-            downloaded_path = gdown.download(
-                url=url,
-                output=output_path,
-                quiet=True
-            )
+           else:
+    output_path = os.path.join(temp_directory, "drive_file")
 
-            if downloaded_path:
-                path = Path(downloaded_path)
+    downloaded_path = gdown.download(
+        url,
+        output_path,
+        quiet=True
+    )
 
-                if path.suffix.lower() in [".pdf", ".docx", ".txt", ".md"]:
-                    downloaded_files[path.name] = path.read_bytes()
+    if downloaded_path:
+        path = Path(downloaded_path)
 
+        if path.suffix.lower() in [".pdf", ".docx", ".txt", ".md"]:
+            downloaded_files[path.name] = path.read_bytes()
+           
         return downloaded_files
 
     except Exception as error:
